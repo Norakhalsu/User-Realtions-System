@@ -19,6 +19,7 @@ public class Course {
     private Integer id;
 
     @NotEmpty(message = "Name must be not empty")
+    @Column(columnDefinition = "varchar(20) not null")
     private String name;
 
     @ManyToOne
