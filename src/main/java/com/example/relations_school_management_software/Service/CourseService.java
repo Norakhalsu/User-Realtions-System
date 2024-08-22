@@ -59,4 +59,12 @@ public class CourseService {
         courseRepository.save(course1);
     }
 
+      public Course getCourseById(Integer id) {
+        Course c=courseRepository.findCourseById(id);
+        if(c==null){
+            throw new ApiException("Course Id not found");
+        }
+        return c;
+    }
+
 }
