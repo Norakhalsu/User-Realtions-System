@@ -42,4 +42,8 @@ public class CourseController {
        courseService.assignCourseToTeacher(courseId, teacherId);
        return ResponseEntity.status(200).body(new ApiResponse("Course assigned successfully"));
    }
+     @GetMapping("/course/{id}")
+    private ResponseEntity getCourseById(@PathVariable int id) {
+       return  ResponseEntity.status(200).body(courseService.getCourseById(id));
+  }
 }
